@@ -1,0 +1,486 @@
+:root {
+  color-scheme: light;
+  --chocolate: #5c3825;
+  --green: #176b45;
+  --green-dark: #105638;
+  --green-soft: #eaf3ec;
+  --cream: #f7f4ee;
+  --beige: #e9e0d2;
+  --muted: #82796f;
+  --danger: #a83e35;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--chocolate);
+  background:
+    radial-gradient(ellipse at 7% 15%, rgba(255, 255, 255, 0.08), transparent 27rem),
+    radial-gradient(ellipse at 95% 87%, rgba(23, 107, 69, 0.2), transparent 30rem),
+    var(--chocolate);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(100% - 32px, 720px);
+  margin: 0 auto;
+  padding: 36px 0 26px;
+}
+
+.holiday-mark,
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  color: #f2e9dc;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.holiday-mark {
+  margin-bottom: 17px;
+}
+
+.holiday-mark__star,
+.footer-star {
+  color: #b18a52;
+  font-size: 13px;
+}
+
+.delivery-card {
+  position: relative;
+  overflow: hidden;
+  padding: 37px 56px 31px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  background: var(--chocolate);
+  box-shadow: 0 20px 60px rgba(35, 20, 12, 0.2), 0 3px 12px rgba(35, 20, 12, 0.1);
+}
+
+.card-decoration {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card-decoration--top {
+  top: 0;
+  right: 0;
+  width: 103px;
+  color: #b3c9b7;
+  opacity: 0.48;
+}
+
+.card-decoration--top svg {
+  display: block;
+  width: 100%;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.card-decoration--bottom {
+  bottom: 29px;
+  left: 17px;
+  display: grid;
+  gap: 3px;
+  color: #b9cdbb;
+  font-size: 14px;
+}
+
+.card-decoration--bottom span:last-child {
+  padding-left: 13px;
+  color: #c8ad7e;
+  font-size: 10px;
+}
+
+.card-header,
+.delivery-card form {
+  position: relative;
+  z-index: 1;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.brand-seal {
+  display: flex;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(242, 233, 220, 0.5);
+  border-radius: 50%;
+  color: #eaf3ec;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.brand-seal__leaf {
+  color: #b18a52;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.brand-seal__text {
+  margin-top: 3px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.brand-seal__year {
+  margin-top: 1px;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: #fff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(27px, 5vw, 34px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.intro {
+  margin: 10px 0 25px;
+  color: #e3d6c4;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 14px;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  display: block;
+  margin: 0 0 7px 1px;
+  color: #f2e9dc;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.optional {
+  color: #d1bd9e;
+  font-weight: 400;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.field-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  color: #9b9489;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.field-icon svg {
+  width: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.input-wrap input,
+.input-wrap select {
+  width: 100%;
+  height: 43px;
+  padding: 0 12px 0 37px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 9px;
+  outline: none;
+  color: #fff;
+  background-color: #684631;
+  font-size: 12px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input-wrap select {
+  padding-right: 30px;
+  color: #fff;
+}
+
+.input-wrap input::placeholder {
+  color: #d2c3b4;
+  opacity: 1;
+}
+
+.input-wrap input:focus,
+.input-wrap select:focus {
+  border-color: #a5cbb0;
+  box-shadow: 0 0 0 3px rgba(234, 243, 236, 0.14);
+}
+
+.input-wrap input[aria-invalid="true"],
+.input-wrap select[aria-invalid="true"] {
+  border-color: #c77169;
+}
+
+.field-hint {
+  display: block;
+  margin: 6px 0 0 1px;
+  color: #d1bd9e;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.privacy-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 21px 0 17px;
+  color: #e3d6c4;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.privacy-note span {
+  color: #b18a52;
+}
+
+.form-message {
+  margin: 0 0 13px;
+  padding: 11px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.form-message--error {
+  border: 1px solid rgba(255, 218, 213, 0.35);
+  color: #ffe2de;
+  background: #744036;
+}
+
+.form-message--success {
+  border: 1px solid rgba(214, 239, 220, 0.35);
+  color: #e4f4e7;
+  background: #28583d;
+}
+
+.submit-button {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--green);
+  box-shadow: 0 5px 12px rgba(23, 107, 69, 0.17);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--green-dark);
+  box-shadow: 0 7px 16px rgba(23, 107, 69, 0.2);
+}
+
+.submit-button:focus-visible {
+  outline: 3px solid rgba(23, 107, 69, 0.25);
+  outline-offset: 3px;
+}
+
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.button-arrow {
+  width: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.button-spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+.submit-button.is-loading .button-spinner {
+  display: block;
+}
+
+.submit-button.is-loading .button-arrow {
+  display: none;
+}
+
+.secure-note {
+  margin: 12px 0 0;
+  color: #d1bd9e;
+  font-size: 10px;
+  text-align: center;
+}
+
+.secure-note span {
+  color: var(--green);
+}
+
+.page-footer {
+  gap: 8px;
+  margin-top: 19px;
+  color: #e3d6c4;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.page-footer .footer-star {
+  font-size: 10px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    width: min(100% - 22px, 460px);
+    padding-top: 22px;
+  }
+
+  .delivery-card {
+    padding: 29px 20px 25px;
+    border-radius: 19px;
+  }
+
+  .card-decoration--top {
+    width: 74px;
+    opacity: 0.34;
+  }
+
+  .card-decoration--bottom {
+    left: 7px;
+    opacity: 0.65;
+  }
+
+  .intro {
+    max-width: 290px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .form-grid {
+    gap: 14px 10px;
+  }
+
+  .input-wrap input,
+  .input-wrap select {
+    height: 45px;
+    padding-left: 33px;
+    font-size: 11px;
+  }
+
+  .field-icon {
+    left: 10px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .field label {
+    font-size: 10px;
+  }
+
+  .page-footer {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field--full {
+    grid-column: auto;
+  }
+
+  .delivery-card {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

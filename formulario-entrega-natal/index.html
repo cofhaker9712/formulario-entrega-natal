@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f4ee">
+    <meta
+      name="description"
+      content="Informe os dados necessários para organizar a entrega do seu produto."
+    >
+    <title>Dados para entrega | Cacau de Natal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="holiday-mark" aria-hidden="true">
+        <span class="holiday-mark__star">✦</span>
+        <span>EDIÇÃO DE NATAL</span>
+        <span class="holiday-mark__star">✦</span>
+      </div>
+
+      <section class="delivery-card" aria-labelledby="page-title">
+        <div class="card-decoration card-decoration--top" aria-hidden="true">
+          <svg viewBox="0 0 110 110" fill="none">
+            <path d="M15 10c17 18 26 40 28 67M37 36 18 27m28 25 20-14M43 66l-19-8m20 1 20-16" />
+            <path d="M44 79c13-7 25-7 39 0-14 7-26 7-39 0Z" />
+            <circle cx="81" cy="31" r="3" />
+          </svg>
+        </div>
+        <div class="card-decoration card-decoration--bottom" aria-hidden="true">
+          <span>✦</span><span>✧</span>
+        </div>
+
+        <header class="card-header">
+          <div class="brand-seal" aria-hidden="true">
+            <span class="brand-seal__leaf">✦</span>
+            <span class="brand-seal__text">CACAU</span>
+            <span class="brand-seal__year">NATAL</span>
+          </div>
+          <p class="eyebrow">Um presente especial está a caminho</p>
+          <h1 id="page-title">Dados para entrega</h1>
+          <p class="intro">
+            Preencha seus dados para organizarmos a entrega com todo carinho.
+          </p>
+        </header>
+
+        <form id="delivery-form" novalidate>
+          <div class="form-grid">
+            <div class="field field--full">
+              <label for="full-name">Nome completo</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.3" /><path d="M5.5 20c.5-3.2 2.8-5 6.5-5s6 1.8 6.5 5" /></svg>
+                </span>
+                <input id="full-name" name="fullName" autocomplete="name" placeholder="Seu nome e sobrenome" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="phone">Telefone com DDD</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 3.8h3l1.4 4-2 1.7a15 15 0 0 0 5.1 5.1l1.7-2 4 1.4v3c0 1.2-1 2.2-2.2 2.2A15.5 15.5 0 0 1 4.8 6c0-1.2 1-2.2 2.2-2.2Z" /></svg>
+                </span>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 99999-9999" maxlength="15" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2" /><path d="m5 7 7 5.5L19 7" /></svg>
+                </span>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="postal-code">CEP</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M19 10.2c0 5-7 10.2-7 10.2S5 15.2 5 10.2a7 7 0 1 1 14 0Z" /><circle cx="12" cy="10" r="2.2" /></svg>
+                </span>
+                <input id="postal-code" name="postalCode" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9" required>
+              </div>
+              <span class="field-hint">Cidade, estado e rua podem ser preenchidos pelo CEP.</span>
+            </div>
+
+            <div class="field">
+              <label for="city">Cidade</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12M8 20v-5h8v5M8 9h.01M12 9h.01M16 9h.01" /></svg>
+                </span>
+                <input id="city" name="city" autocomplete="address-level2" placeholder="Sua cidade" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="state">Estado</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" /><path d="m4.5 7.8 7.5 4.4 7.5-4.4M12 12.2V21" /></svg>
+                </span>
+                <select id="state" name="state" autocomplete="address-level1" required>
+                  <option value="">Selecione</option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <label for="street">Rua e endereço completo</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3.5 20.5h17M5 20V9l7-5 7 5v11M9 20v-6h6v6" /></svg>
+                </span>
+                <input id="street" name="street" autocomplete="street-address" placeholder="Rua, avenida ou estrada" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="number">Número do imóvel</label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 4h8v16H8zM5 8h3m8 0h3M5 12h3m8 0h3M5 16h3m8 0h3" /></svg>
+                </span>
+                <input id="number" name="number" autocomplete="address-line2" placeholder="Nº" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="complement">Complemento <span class="optional">(opcional)</span></label>
+              <div class="input-wrap">
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5" /></svg>
+                </span>
+                <input id="complement" name="complement" autocomplete="address-line3" placeholder="Apartamento, bloco, referência">
+              </div>
+            </div>
+          </div>
+
+          <p class="privacy-note">
+            <span aria-hidden="true">✦</span>
+            Seus dados serão utilizados para organizar a entrega do produto.
+          </p>
+
+          <div id="form-message" class="form-message" role="status" aria-live="polite" hidden></div>
+
+          <button class="submit-button" id="submit-button" type="submit">
+            <span class="button-label">Continuar</span>
+            <span class="button-spinner" aria-hidden="true"></span>
+            <svg class="button-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
+          </button>
+          <p class="secure-note"><span aria-hidden="true">•</span> Esta página não armazena seus dados.</p>
+        </form>
+      </section>
+
+      <footer class="page-footer">
+        <span>Feito com carinho para celebrar</span>
+        <span class="footer-star" aria-hidden="true">✦</span>
+        <span>um Natal especial</span>
+      </footer>
+    </main>
+  </body>
+</html>
